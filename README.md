@@ -1,1 +1,8 @@
 # neural_networks
+This neural network evaluates arious factors bout charities and tries to determine the predicitability of that charity's success. Some of the aforemention factors are income amount, company sponsored or independent, charity use case type, among others. Before processing the dataset was cleaned as to make the computing less strenuous. The data was tabular and as such whole columns were deleted because the data within t hem were not pertinent to the question of charity success. For instance, a government coding, with no definition or legend as to what the code means, was deleted. Following the column removal, the remaining columns were evaluated for potential bucketing to, again, make computing easier and more efficient. If a column had a particuarly high number of unique values, then like values were bucketed together. For example, this occured in the income amount column.
+
+After bucketing, I used OneHotEncodered to encode categorical variables so that they could be included in model computations and then used sklearn StandardScaler to standarize all numerical variables.
+
+Now the model was ready to be created. I utilied a deep learning netowkr with two diffen layers with 60 and 30 nodes respectively. I arrived at this number of neurons because the recommended amount is 2-3X the number of variables in the dataset, which for my case is 19. I used tanh and relu activation functions. The model was a binary classification model with 100 epochs for thoroughness.
+
+Uon running and evaluating the model, it significantly underperformed expecations with an accuracy of 53.4% and a loss metric of 69.1%. To enhance, I tried different activation functions, hidden layers and number of neurons but to no avail. Am open to suggestions.
